@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Table</title>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #1d1645; /* Dark purple background */
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.main-title {
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Toggle Switch Styles */
+.toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.toggle-label {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ffffff;
+  border-radius: 34px;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #1d1645;
+  border-radius: 50%;
+  transition: .4s;
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Grid & Cards */
+.cards-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 340px;
+}
+
+.card {
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+}
+
+/* Metallic Background Simulations via Unsplash */
+.card-silver {
+  background-image: linear-gradient(rgba(20, 20, 40, 0.75), rgba(20, 20, 40, 0.75)), url('https://images.unsplash.com/photo-1618423851532-61b695123d6a?q=80&w=600&auto=format&fit=crop');
+}
+.card-rosegold {
+  background-image: linear-gradient(rgba(50, 20, 30, 0.75), rgba(50, 20, 30, 0.75)), url('https://images.unsplash.com/photo-1601002360814-2dd07b57b9c9?q=80&w=600&auto=format&fit=crop');
+}
+.card-gold {
+  background-image: linear-gradient(rgba(50, 35, 10, 0.75), rgba(50, 35, 10, 0.75)), url('https://images.unsplash.com/photo-1611028345248-c8d37452e2a3?q=80&w=600&auto=format&fit=crop');
+}
+
+/* Typography Inside Cards */
+.card-title {
+  font-style: italic;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.card-features { margin-bottom: 15px; }
+.feature-item {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 5px 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+.feature-subtext {
+  font-style: italic;
+  font-size: 11px;
+  margin: 0 0 10px 0;
+  opacity: 0.9;
+}
+
+.card-description {
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+/* Dynamic Price Area */
+.price-container {
+  margin-top: auto; /* Pushes price to bottom */
+}
+.price {
+  font-style: italic;
+  font-size: 36px;
+  margin: 0 0 5px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+.price-period {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+}
+.price-period span {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+/* Buttons */
+.buy-btn {
+  background-color: white;
+  color: #1d1645;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 0;
+  width: 90%;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 6px 6px 0px 0px #000000;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.buy-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px 0px #000000;
+}
+  </style>
+</head>
+<body>
+
+  <script>
+    const toggle = document.getElementById('pricing-toggle');
+
+// Price Elements
+const price1 = document.getElementById('price-1');
+const period1 = document.getElementById('period-1');
+
+const price2 = document.getElementById('price-2');
+const period2 = document.getElementById('period-2');
+
+const price3 = document.getElementById('price-3');
+const period3 = document.getElementById('period-3');
+
+toggle.addEventListener('change', () => {
+  if (toggle.checked) {
+    // Annually
+    price1.innerText = '$999';
+    period1.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
+    
+    price2.innerText = '$2,999';
+    period2.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
+    
+    price3.innerText = '$9,999';
+    period3.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
+  } else {
+    // Monthly
+    price1.innerText = '$99';
+    period1.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
+    
+    price2.innerText = '$299';
+    period2.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
+    
+    price3.innerText = '$999';
+    period3.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
+  }
+});
+  </script>
+</body>
+</html>
