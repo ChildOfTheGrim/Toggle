@@ -189,7 +189,83 @@ input:checked + .slider:before {
   </style>
 </head>
 <body>
+<div class="pricing-container">
+  <h1 class="main-title">PRICING:</h1>
+  
+  <div class="toggle-wrapper">
+    <span class="toggle-label">Monthly</span>
+    <label class="switch">
+      <input type="checkbox" id="pricing-toggle">
+      <span class="slider"></span>
+    </label>
+    <span class="toggle-label">Annually</span>
+  </div>
 
+  <div class="cards-grid">
+    
+    <div class="card-column">
+      <div class="card card-silver">
+        <h2 class="card-title">ONLINE EDUCATION</h2>
+        <div class="card-features">
+          <p class="feature-item">+ ONLINE EDUCATION</p>
+          <p class="feature-subtext">(Sessions are available once daily or once weekly)</p>
+        </div>
+        <p class="card-description">
+          In this package, you work independently without direct support. While this is the only package without a guarantee, it is carefully designed to provide everything a committed and consistent participant needs to achieve real results.
+        </p>
+        <div class="price-container">
+          <h3 class="price" id="price-1">$99</h3>
+          <p class="price-period" id="period-1">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
+        </div>
+      </div>
+      <button class="buy-btn">BUY NOW</button>
+    </div>
+
+    <div class="card-column">
+      <div class="card card-rosegold">
+        <h2 class="card-title">PREMIUM</h2>
+        <div class="card-features">
+          <p class="feature-item">+ ONLINE EDUCATION</p>
+          <p class="feature-subtext">(Sessions are available once daily or once weekly)</p>
+          <p class="feature-item">+ DEDICATED SUCCESS MANAGER</p>
+        </div>
+        <p class="card-description">
+          With online education and full access to all details, you will have a dedicated, successful manager. A guarantee is granted for medium-level accomplishments.
+        </p>
+        <div class="price-container">
+          <h3 class="price" id="price-2">$299</h3>
+          <p class="price-period" id="period-2">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
+        </div>
+      </div>
+      <button class="buy-btn">BUY NOW</button>
+    </div>
+
+    <div class="card-column">
+      <div class="card card-gold">
+        <h2 class="card-title">EXCLUSIVE</h2>
+        <div class="card-features">
+          <p class="feature-item">+ LIVE EDUCATION</p>
+          <p class="feature-item">+ DEDICATED SUCCESS MANAGER</p>
+          <p class="feature-item">+ ONLINE EDUCATION</p>
+          <p class="feature-subtext">(Sessions are available once daily or once weekly)</p>
+          <p class="feature-item">+ 100% PERCENT GUARANTEE ON EVERY ACCOMPLISHMENT</p>
+        </div>
+        <p class="card-description">
+          Currently held in Belgrade, Europe, with upcoming sessions in Miami, Florida. You can attend the education live and ask questions in person, or join online via Zoom.
+        </p>
+        <div class="price-container">
+          <h3 class="price" id="price-3">$999</h3>
+          <p class="price-period" id="period-3">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
+        </div>
+      </div>
+      <button class="buy-btn">BUY NOW</button>
+    </div>
+
+  </div>
+</div>
+
+
+  
   <script>
     const toggle = document.getElementById('pricing-toggle');
 
