@@ -218,7 +218,7 @@ input:checked + .slider:before {
           <p class="price-period" id="period-1">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
         </div>
       </div>
-      <button class="buy-btn">BUY NOW</button>
+      <button id="btn-1" class="buy-btn" onclick="window.location.href='YOUR_MONTHLY_LINK_1'">BUY NOW</button>
     </div>
 
     <div class="card-column">
@@ -237,7 +237,7 @@ input:checked + .slider:before {
           <p class="price-period" id="period-2">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
         </div>
       </div>
-      <button class="buy-btn">BUY NOW</button>
+      <button id="btn-2" class="buy-btn" onclick="window.location.href='YOUR_MONTHLY_LINK_2'">BUY NOW</button>
     </div>
 
     <div class="card-column">
@@ -258,50 +258,60 @@ input:checked + .slider:before {
           <p class="price-period" id="period-3">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
         </div>
       </div>
-      <button class="buy-btn">BUY NOW</button>
+      <button id="btn-3" class="buy-btn" onclick="window.location.href='YOUR_MONTHLY_LINK_3'">BUY NOW</button>
     </div>
 
   </div>
 </div>
 
-
-  
   <script>
     const toggle = document.getElementById('pricing-toggle');
 
-// Price Elements
-const price1 = document.getElementById('price-1');
-const period1 = document.getElementById('period-1');
+    // Price Elements
+    const price1 = document.getElementById('price-1');
+    const period1 = document.getElementById('period-1');
 
-const price2 = document.getElementById('price-2');
-const period2 = document.getElementById('period-2');
+    const price2 = document.getElementById('price-2');
+    const period2 = document.getElementById('period-2');
 
-const price3 = document.getElementById('price-3');
-const period3 = document.getElementById('period-3');
+    const price3 = document.getElementById('price-3');
+    const period3 = document.getElementById('period-3');
 
-toggle.addEventListener('change', () => {
-  if (toggle.checked) {
-    // Annually
-    price1.innerText = '$999';
-    period1.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
-    
-    price2.innerText = '$2,999';
-    period2.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
-    
-    price3.innerText = '$9,999';
-    period3.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
-  } else {
-    // Monthly
-    price1.innerText = '$99';
-    period1.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
-    
-    price2.innerText = '$299';
-    period2.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
-    
-    price3.innerText = '$999';
-    period3.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
-  }
-});
+    // Button Elements
+    const btn1 = document.getElementById('btn-1');
+    const btn2 = document.getElementById('btn-2');
+    const btn3 = document.getElementById('btn-3');
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        // --- ANNUALLY ---
+        price1.innerText = '$999';
+        period1.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
+        btn1.onclick = () => window.location.href = 'YOUR_ANNUAL_LINK_1';
+        
+        price2.innerText = '$2,999';
+        period2.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
+        btn2.onclick = () => window.location.href = 'YOUR_ANNUAL_LINK_2';
+        
+        price3.innerText = '$9,999';
+        period3.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
+        btn3.onclick = () => window.location.href = 'YOUR_ANNUAL_LINK_3';
+
+      } else {
+        // --- MONTHLY ---
+        price1.innerText = '$99';
+        period1.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
+        btn1.onclick = () => window.location.href = 'YOUR_MONTHLY_LINK_1';
+        
+        price2.innerText = '$299';
+        period2.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
+        btn2.onclick = () => window.location.href = 'YOUR_MONTHLY_LINK_2';
+        
+        price3.innerText = '$999';
+        period3.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
+        btn3.onclick = () => window.location.href = 'YOUR_MONTHLY_LINK_3';
+      }
+    });
   </script>
 </body>
 </html>
