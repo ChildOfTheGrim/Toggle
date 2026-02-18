@@ -218,7 +218,7 @@ input:checked + .slider:before {
           <p class="price-period" id="period-1">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
         </div>
       </div>
-      <button id="btn-1" class="buy-btn" onclick="window.location.href='YOUR_MONTHLY_LINK_1'">BUY NOW</button>
+      <button id="btn-1" class="buy-btn" onclick="window.open('https://buy.stripe.com/9B6eVf7WT5VQgfR1JfbEA0c', '_blank')">BUY NOW</button>
     </div>
 
     <div class="card-column">
@@ -237,7 +237,7 @@ input:checked + .slider:before {
           <p class="price-period" id="period-2">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
         </div>
       </div>
-      <button id="btn-2" class="buy-btn" onclick="window.location.href='YOUR_MONTHLY_LINK_2'">BUY NOW</button>
+      <button id="btn-2" class="buy-btn" onclick="window.open('https://buy.stripe.com/fZu6oJdhdcke6Fh5ZvbEA0e', '_blank')">BUY NOW</button>
     </div>
 
     <div class="card-column">
@@ -258,7 +258,7 @@ input:checked + .slider:before {
           <p class="price-period" id="period-3">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
         </div>
       </div>
-      <button id="btn-3" class="buy-btn" onclick="window.location.href='YOUR_MONTHLY_LINK_3'">BUY NOW</button>
+      <button id="btn-3" class="buy-btn" onclick="window.open('https://buy.stripe.com/eVq9AVdhdcke5Bd0FbbEA0d', '_blank')">BUY NOW</button>
     </div>
 
   </div>
@@ -287,29 +287,29 @@ input:checked + .slider:before {
         // --- ANNUALLY ---
         price1.innerText = '$999';
         period1.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
-        btn1.onclick = () => window.location.href = 'https://buy.stripe.com/4gM4gB5OLfwq3t573zbEA0h';
+        btn1.onclick = () => window.open('https://buy.stripe.com/4gM4gB5OLfwq3t573zbEA0h', '_blank');
         
         price2.innerText = '$2,999';
         period2.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
-        btn2.onclick = () => window.location.href = 'https://buy.stripe.com/3cI8wRelhdoi6Fhew1bEA0i';
+        btn2.onclick = () => window.open('https://buy.stripe.com/3cI8wRelhdoi6Fhew1bEA0i', '_blank');
         
         price3.innerText = '$9,999';
         period3.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
-        btn3.onclick = () => window.location.href = 'https://buy.stripe.com/fZu00lgtp83Ye7J3RnbEA0g';
+        btn3.onclick = () => window.open('https://buy.stripe.com/fZu00lgtp83Ye7J3RnbEA0g', '_blank');
 
       } else {
         // --- MONTHLY ---
         price1.innerText = '$99';
         period1.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
-        btn1.onclick = () => window.location.href = 'https://buy.stripe.com/9B6eVf7WT5VQgfR1JfbEA0c';
+        btn1.onclick = () => window.open('https://buy.stripe.com/9B6eVf7WT5VQgfR1JfbEA0c', '_blank');
         
         price2.innerText = '$299';
         period2.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
-        btn2.onclick = () => window.location.href = 'https://buy.stripe.com/fZu6oJdhdcke6Fh5ZvbEA0e';
+        btn2.onclick = () => window.open('https://buy.stripe.com/fZu6oJdhdcke6Fh5ZvbEA0e', '_blank');
         
         price3.innerText = '$999';
         period3.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
-        btn3.onclick = () => window.location.href = 'https://buy.stripe.com/eVq9AVdhdcke5Bd0FbbEA0d';
+        btn3.onclick = () => window.open('https://buy.stripe.com/eVq9AVdhdcke5Bd0FbbEA0d', '_blank');
       }
     });
   </script>
