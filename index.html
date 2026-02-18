@@ -9,7 +9,6 @@
 
 body {
   margin: 0;
-  
   background-color: #001B47; /* Dark purple background */
   font-family: 'Montserrat', sans-serif;
   color: white;
@@ -167,8 +166,12 @@ input:checked + .slider:before {
   font-weight: 400;
 }
 
-/* Buttons */
+/* Link Buttons */
 .buy-btn {
+  display: block; /* Makes the link behave like a block/button */
+  box-sizing: border-box;
+  text-decoration: none; /* Removes underline */
+  text-align: center;
   background-color: white;
   color: #001B47;
   border: none;
@@ -218,7 +221,7 @@ input:checked + .slider:before {
           <p class="price-period" id="period-1">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
         </div>
       </div>
-      <button id="btn-1" class="buy-btn" onclick="window.open('https://buy.stripe.com/9B6eVf7WT5VQgfR1JfbEA0c', '_blank')">BUY NOW</button>
+      <a id="btn-1" class="buy-btn" href="https://buy.stripe.com/9B6eVf7WT5VQgfR1JfbEA0c" target="_blank">BUY NOW</a>
     </div>
 
     <div class="card-column">
@@ -237,7 +240,7 @@ input:checked + .slider:before {
           <p class="price-period" id="period-2">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
         </div>
       </div>
-      <button id="btn-2" class="buy-btn" onclick="window.open('https://buy.stripe.com/fZu6oJdhdcke6Fh5ZvbEA0e', '_blank')">BUY NOW</button>
+      <a id="btn-2" class="buy-btn" href="https://buy.stripe.com/fZu6oJdhdcke6Fh5ZvbEA0e" target="_blank">BUY NOW</a>
     </div>
 
     <div class="card-column">
@@ -258,7 +261,7 @@ input:checked + .slider:before {
           <p class="price-period" id="period-3">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
         </div>
       </div>
-      <button id="btn-3" class="buy-btn" onclick="window.open('https://buy.stripe.com/eVq9AVdhdcke5Bd0FbbEA0d', '_blank')">BUY NOW</button>
+      <a id="btn-3" class="buy-btn" href="https://buy.stripe.com/eVq9AVdhdcke5Bd0FbbEA0d" target="_blank">BUY NOW</a>
     </div>
 
   </div>
@@ -277,7 +280,7 @@ input:checked + .slider:before {
     const price3 = document.getElementById('price-3');
     const period3 = document.getElementById('period-3');
 
-    // Button Elements
+    // Button Elements (Now Anchor Links)
     const btn1 = document.getElementById('btn-1');
     const btn2 = document.getElementById('btn-2');
     const btn3 = document.getElementById('btn-3');
@@ -287,29 +290,29 @@ input:checked + .slider:before {
         // --- ANNUALLY ---
         price1.innerText = '$999';
         period1.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
-        btn1.onclick = () => window.open('https://buy.stripe.com/4gM4gB5OLfwq3t573zbEA0h', '_blank');
+        btn1.href = 'https://buy.stripe.com/4gM4gB5OLfwq3t573zbEA0h';
         
         price2.innerText = '$2,999';
         period2.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
-        btn2.onclick = () => window.open('https://buy.stripe.com/3cI8wRelhdoi6Fhew1bEA0i', '_blank');
+        btn2.href = 'https://buy.stripe.com/3cI8wRelhdoi6Fhew1bEA0i';
         
         price3.innerText = '$9,999';
         period3.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
-        btn3.onclick = () => window.open('https://buy.stripe.com/fZu00lgtp83Ye7J3RnbEA0g', '_blank');
+        btn3.href = 'https://buy.stripe.com/fZu00lgtp83Ye7J3RnbEA0g';
 
       } else {
         // --- MONTHLY ---
         price1.innerText = '$99';
         period1.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
-        btn1.onclick = () => window.open('https://buy.stripe.com/9B6eVf7WT5VQgfR1JfbEA0c', '_blank');
+        btn1.href = 'https://buy.stripe.com/9B6eVf7WT5VQgfR1JfbEA0c';
         
         price2.innerText = '$299';
         period2.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
-        btn2.onclick = () => window.open('https://buy.stripe.com/fZu6oJdhdcke6Fh5ZvbEA0e', '_blank');
+        btn2.href = 'https://buy.stripe.com/fZu6oJdhdcke6Fh5ZvbEA0e';
         
         price3.innerText = '$999';
         period3.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
-        btn3.onclick = () => window.open('https://buy.stripe.com/eVq9AVdhdcke5Bd0FbbEA0d', '_blank');
+        btn3.href = 'https://buy.stripe.com/eVq9AVdhdcke5Bd0FbbEA0d';
       }
     });
   </script>
