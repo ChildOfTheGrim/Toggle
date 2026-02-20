@@ -202,6 +202,33 @@ input:checked + .slider:before {
   transform: translate(-2px, -2px); /* Lifts the button up and left */
   box-shadow: 8px 8px 0px 0px #000000; /* Expands the shadow to match the lift */
 }
+
+
+/* Hide the hint on desktop */
+.swipe-hint {
+  display: none; 
+  text-align: center;
+  font-style: italic;
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 0.7;
+  margin-bottom: 10px;
+  animation: pulse 2s infinite; /* Grabs attention subtly */
+}
+
+/* Subtle pulsing animation for the text */
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.4; }
+}
+
+/* Show the hint ONLY on screens smaller than 1100px (when scrolling starts) */
+@media (max-width: 1100px) {
+  .swipe-hint {
+    display: block;
+  }
+}
   </style>
 </head>
 <body>
@@ -216,7 +243,7 @@ input:checked + .slider:before {
     </label>
     <span class="toggle-label">Annually</span>
   </div>
-
+  <p class="swipe-hint">Swipe to see more plans &rarr;</p>
   <div class="cards-grid">
     
     <div class="card-column">
