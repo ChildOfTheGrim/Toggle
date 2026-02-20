@@ -77,8 +77,14 @@ input:checked + .slider:before {
 .cards-grid {
   display: flex;
   gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start; /* Changed from center so scrolling starts from the left */
+  flex-wrap: nowrap; /* Forces cards into a single horizontal row */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  padding: 20px 20px 40px 20px; /* Prevents shadow clipping and leaves room for the scrollbar */
+  
+  /* Optional: Makes it snap neatly like a native app carousel */
+  scroll-snap-type: x mandatory; 
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .card-column {
@@ -86,6 +92,8 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
   width: 340px;
+  flex: 0 0 auto; /* Prevents the cards from squishing together */
+  scroll-snap-align: center; /* Centers the card when the user stops scrolling */
 }
 
 .card {
