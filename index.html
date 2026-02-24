@@ -258,8 +258,8 @@ input:checked + .slider:before {
         </p>
         <div class="price-container">
           <h3 class="price" id="price-1">$99</h3>
-          <p class="price-period" id="period-1">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
-          <span>*Lessons released monthly</span>
+          <p class="price-period" id="period-1">MONTHLY<br><span>(FOR 13 MONTHS)</span><span>*Lessons released monthly</span></p>
+          
         </div>
       </div>
       <a id="btn-1" class="buy-btn" href="https://buy.stripe.com/28E00la51fwqe7J5ZvbEA0q" target="_blank">BUY NOW</a>
@@ -279,8 +279,8 @@ input:checked + .slider:before {
         </p>
         <div class="price-container">
           <h3 class="price" id="price-2">$299</h3>
-          <p class="price-period" id="period-2">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
-          <span>*Lessons released monthly</span>
+          <p class="price-period" id="period-2">MONTHLY<br><span>(FOR 13 MONTHS)</span><span>*Lessons released monthly</span></p>
+          
         </div>
       </div>
       <a id="btn-2" class="buy-btn" href="https://buy.stripe.com/4gMfZj5OL1FA3t5cnTbEA0r" target="_blank">BUY NOW</a>
@@ -302,9 +302,7 @@ So far, more than 2,000 goals have been achieved.
         </p>
         <div class="price-container">
           <h3 class="price" id="price-3">$2999</h3>
-          <p class="price-period" id="period-3">MONTHLY<br><span>(FOR 13 MONTHS)</span></p>
-          <span>*Lessons released
- monthly</span>
+          <p class="price-period" id="period-3">MONTHLY<br><span>(FOR 13 MONTHS)</span><span>*Lessons released monthly</span></p>
         </div>
       </div>
       <a id="btn-3" class="buy-btn" href="https://buy.stripe.com/eVq14p3GDcke1kXew1bEA0s" target="_blank">BUY NOW</a>
@@ -335,29 +333,29 @@ So far, more than 2,000 goals have been achieved.
       if (toggle.checked) {
         // --- ANNUALLY ---
         price1.innerText = '$999';
-        period1.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
+        period1.innerHTML = 'ANNUALLY<br><span>*all lessons available immediately</span>';
         btn1.href = 'https://buy.stripe.com/5kQ3cx3GD0BwaVx2NjbEA0k';
         
         price2.innerText = '$2,999';
-        period2.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
+        period2.innerHTML = 'ANNUALLY<br><span>*all lessons available immediately</span>';
         btn2.href = 'https://buy.stripe.com/cNifZjgtpgAubZBdrXbEA0p';
         
         price3.innerText = '$29,999';
-        period3.innerHTML = 'ANNUALLY<br><span>(FULL YEAR)</span>';
+        period3.innerHTML = 'ANNUALLY<br><span>*all lessons available immediately</span>';
         btn3.href = 'https://buy.stripe.com/aFafZj7WT2JE1kXdrXbEA0o';
 
       } else {
         // --- MONTHLY ---
         price1.innerText = '$99';
-        period1.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
+        period1.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span><span>*Lessons released monthly</span>';
         btn1.href = 'https://buy.stripe.com/28E00la51fwqe7J5ZvbEA0q';
         
         price2.innerText = '$299';
-        period2.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
+        period2.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span><span>*Lessons released monthly</span>';
         btn2.href = 'https://buy.stripe.com/4gMfZj5OL1FA3t5cnTbEA0r';
         
         price3.innerText = '$2999';
-        period3.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span>';
+        period3.innerHTML = 'MONTHLY<br><span>(FOR 13 MONTHS)</span><span>*Lessons released monthly</span>';
         btn3.href = 'https://buy.stripe.com/eVq14p3GDcke1kXew1bEA0s';
       }
     });
