@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  background-color: #001B47; /* Dark purple background */
+  background-color: #001B47;
   font-family: 'Montserrat', sans-serif;
   color: white;
   display: flex;
@@ -78,8 +78,8 @@ input:checked + .slider:before {
   display: flex;
   gap: 30px;
   justify-content: flex-start; /* Changed from center so scrolling starts from the left */
-  flex-wrap: nowrap; /* Forces cards into a single horizontal row */
-  overflow-x: auto; /* Enables horizontal scrolling */
+  /*flex-wrap: nowrap; /* Forces cards into a single horizontal row */
+  /*overflow-x: auto; /* Enables horizontal scrolling */
   padding: 20px 20px 40px 20px; /* Prevents shadow clipping and leaves room for the scrollbar */
   
   /* Optional: Makes it snap neatly like a native app carousel */
@@ -112,13 +112,13 @@ input:checked + .slider:before {
 
 /* Metallic Background Simulations via Unsplash */
 .card-silver {
-  background-image: linear-gradient(rgba(20, 20, 40, 0.75), rgba(20, 20, 40, 0.75)), url('https://images.unsplash.com/photo-1618423851532-61b695123d6a?q=80&w=600&auto=format&fit=crop');
+  background-image: linear-gradient(rgba(20, 20, 40, 0.75), rgba(20, 20, 40, 0.75));
 }
 .card-rosegold {
-  background-image: linear-gradient(rgba(50, 20, 30, 0.75), rgba(50, 20, 30, 0.75)), url('https://images.unsplash.com/photo-1601002360814-2dd07b57b9c9?q=80&w=600&auto=format&fit=crop');
+  background-image: linear-gradient(rgba(50, 20, 30, 0.75), rgba(50, 20, 30, 0.75));
 }
 .card-gold {
-  background-image: linear-gradient(rgba(50, 35, 10, 0.75), rgba(50, 35, 10, 0.75)), url('https://images.unsplash.com/photo-1611028345248-c8d37452e2a3?q=80&w=600&auto=format&fit=crop');
+  background-image: linear-gradient(rgba(50, 35, 10, 0.75), rgba(50, 35, 10, 0.75));
 }
 
 /* Typography Inside Cards */
@@ -202,33 +202,22 @@ input:checked + .slider:before {
   transform: translate(-2px, -2px); /* Lifts the button up and left */
   box-shadow: 8px 8px 0px 0px #000000; /* Expands the shadow to match the lift */
 }
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .cards-grid {
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-type: none; /* Disables horizontal snapping */
+    padding: 20px 10px; /* Reduces padding on smaller screens */
+  }
 
-
-/* Hide the hint on desktop */
-.swipe-hint {
-  display: none; 
-  text-align: center;
-  font-style: italic;
-  font-size: 14px;
-  color: #ffffff;
-  opacity: 0.7;
-  margin-bottom: 10px;
-  animation: pulse 2s infinite; /* Grabs attention subtly */
-}
-
-/* Subtle pulsing animation for the text */
-@keyframes pulse {
-  0% { opacity: 0.4; }
-  50% { opacity: 0.9; }
-  100% { opacity: 0.4; }
-}
-
-/* Show the hint ONLY on screens smaller than 1100px (when scrolling starts) */
-@media (max-width: 1100px) {
-  .swipe-hint {
-    display: block;
+  .card-column {
+    width: 100%;
+    max-width: 340px; /* Allows cards to shrink on phones narrower than 340px */
   }
 }
+
+
   </style>
 </head>
 <body>
@@ -243,7 +232,6 @@ input:checked + .slider:before {
     </label>
     <span class="toggle-label">Annually</span>
   </div>
-  <p class="swipe-hint">Swipe to see more plans &rarr;</p>
   <div class="cards-grid">
     
     <div class="card-column">
