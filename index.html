@@ -347,6 +347,17 @@ So far, more than 2,000 goals have been achieved.
         btn3.href = 'https://buy.stripe.com/eVq14p3GDcke1kXew1bEA0s';
       }
     });
+    // This watches the body of your pricing page for any size changes
+    const resizeObserver = new ResizeObserver(() => {
+    // Calculate the total height of the page content
+    const totalHeight = document.documentElement.scrollHeight;
+    
+    // Send that exact height to the parent window (Mini Course Generator)
+    window.parent.postMessage({ type: 'resize-iframe', height: totalHeight }, '*');
+  });
+
+  // Start watching the page body
+  resizeObserver.observe(document.body);
   </script>
 </body>
 </html>
